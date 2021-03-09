@@ -3,7 +3,7 @@
     $conn = new mysqli("localhost","root","","online_shop");
 
 if ($_SESSION['identity']=='seller') {
-    $pro_qry = "SELECT * FROM customer_order WHERE customer_id = {$_GET['customerid']} AND pro_id = {$_GET['proid']} AND order_time = '{$_GET['time']}'";
+    $pro_qry = "SELECT * FROM customer_order WHERE customer_id = {$_GET['customerid']} AND pro_id = {$_GET['proid']} AND order_date = '{$_GET['time']}'";
     $rdy_pro = mysqli_query($conn, $pro_qry);
     $row = mysqli_fetch_array($rdy_pro);
     $seller_qry = "SELECT Username,user_photo,Email,ID FROM user WHERE ID = {$row['customer_id']}";
@@ -12,20 +12,20 @@ if ($_SESSION['identity']=='seller') {
 
     if (isset($_POST['update'])) {
         $tracknum = $_POST['tracknum'];
-        $updqry = "UPDATE customer_order SET status='Delivered', tracking_num='$tracknum',cancel_reason='' WHERE customer_id = {$_GET['customerid']} AND pro_id = {$_GET['proid']} AND order_time = '{$_GET['time']}'";
+        $updqry = "UPDATE customer_order SET status='Delivered', tracking_num='$tracknum',cancel_reason='' WHERE customer_id = {$_GET['customerid']} AND pro_id = {$_GET['proid']} AND order_date = '{$_GET['time']}'";
         if (mysqli_query($conn,$updqry)) {
             echo "<script>alert('Order status updated')</script>";
         }
     }
     if (isset($_POST['cancel'])) {
         $reason = $_POST['reason'];
-        $updqry = "UPDATE customer_order SET status='Canceled',cancel_reason='$reason',tracking_num='' WHERE customer_id = {$_GET['customerid']} AND pro_id = {$_GET['proid']} AND order_time = '{$_GET['time']}'";
+        $updqry = "UPDATE customer_order SET status='Canceled',cancel_reason='$reason',tracking_num='' WHERE customer_id = {$_GET['customerid']} AND pro_id = {$_GET['proid']} AND order_date = '{$_GET['time']}'";
         if (mysqli_query($conn,$updqry)) {
             echo "<script>alert('Order status updated')</script>";
         }
     }
 }else{
-    $pro_qry = "SELECT * FROM customer_order WHERE customer_id = {$_SESSION['id']} AND pro_id = {$_GET['proid']} AND order_time = '{$_GET['time']}'";
+    $pro_qry = "SELECT * FROM customer_order WHERE customer_id = {$_SESSION['id']} AND pro_id = {$_GET['proid']} AND order_date = '{$_GET['time']}'";
     $rdy_pro = mysqli_query($conn, $pro_qry);
     $row = mysqli_fetch_array($rdy_pro);
     $seller_qry = "SELECT Username,user_photo,Email,ID FROM user WHERE ID = {$row['seller_id']}";
@@ -43,7 +43,7 @@ if ($_SESSION['identity']=='seller') {
     <title>Document</title>
 </head>
 <body>
-    <span id="buttback" onclick="window.history.back();">&#8592;</span>
+    <!-- <span id="buttback" onclick="window.history.back();">&#8592;</span> -->
     <div class='product-con'>
         <img src="<?=$row['pro_img']?>" alt="" class="product-img">
         <div class="product-name"><?=$row['pro_name']?></div>
@@ -58,8 +58,9 @@ if ($_SESSION['identity']=='seller') {
             <div class="">Delivered</div>
         <?php }elseif ($row['status'] == "Canceled") {?>
             <div class="">Canceled</div>
-        <?php } 
-
+        <?php }else{ ?> 
+            <div class="">Pending</div>
+        <?php }
         if ($_SESSION['identity']=='seller') {?>
         <form method='POST'>
             <input type="number" name="tracknum" required>
@@ -71,7 +72,11 @@ if ($_SESSION['identity']=='seller') {
         </form>
         <?php }?><br>
         <label for="">Tracking number :</label>
+        <?php if($row['status'] == "Ordered"){ ?>
         <a href="#"><?=$row['tracking_num']?></a>
+        <?php }else{?>
+        <span>-</span>
+        <?php }?>
         
     </div>
     <?php if ($_SESSION['identity']=='seller') { ?>
@@ -80,6 +85,7 @@ if ($_SESSION['identity']=='seller') {
                 <img class="seller-img" src="<?=$row2['user_photo']?>" alt="">
             </div>
             <div class="seller-content">
+                Product Seller <br>
                 <?=$row2['Username']?><br>
                 <?=$row2['Email']?>
             </div>
@@ -91,6 +97,7 @@ if ($_SESSION['identity']=='seller') {
                 <img class="seller-img" src="<?=$row2['user_photo']?>" alt="">
             </div>
             <div class="seller-content">
+                Product Seller <br>
                 <?=$row2['Username']?><br>
                 <?=$row2['Email']?>
             </div>
@@ -102,6 +109,7 @@ if ($_SESSION['identity']=='seller') {
                 <img class="seller-img" src="<?=$row2['user_photo']?>" alt="">
             </div>
             <div class="seller-content">
+                Product Seller <br>
                 <?=$row2['Username']?><br>
                 <?=$row2['Email']?>
             </div>

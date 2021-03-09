@@ -108,7 +108,7 @@ $userid = $_SESSION['id'];
         if ($sorttype == "asc") {
                 switch ($getsort) {
                 case 'time':
-                    $sortwut = "order_time DESC";
+                    $sortwut = "order_date DESC";
                     break;
                 case 'name':
                     $sortwut = "first_name DESC";
@@ -129,7 +129,7 @@ $userid = $_SESSION['id'];
         }elseif ($sorttype == "desc") {
                 switch ($getsort) {
                 case 'time':
-                    $sortwut = "order_time ASC";
+                    $sortwut = "order_date ASC";
                     break;
                 case 'name':
                     $sortwut = "first_name ASC";
@@ -152,14 +152,14 @@ $userid = $_SESSION['id'];
         $rdy_sort = mysqli_query($conn,$sortqry);
         while ($cusresult = mysqli_fetch_array($rdy_sort)) { ?>
             <li id="order-list">
-                <div id="order-time"><?=$cusresult['order_time']?></div>
+                <div id="order-time"><?=$cusresult['order_date']?></div>
                 <div id="order-name"><?=$cusresult['first_name']?> <?=$cusresult['last_name']?></div>
                 <div id="order-img"><img src="<?=$cusresult['pro_img']?>" alt=""></div>
                 <div id="order-pro"><?=$cusresult['pro_name']?></div>
                 <div id="order-quan"><?=$cusresult['pro_quan']?></div>
                 <div id="order-price">RM<span><?=$cusresult['pro_price']?></span></div>
                 <div id="order-status"><?=$cusresult['status']?></div>
-                <div id="order-details"><a href="details.php?time=<?=$cusresult['order_time']?>&proid=<?=$cusresult['pro_id']?>" target="_blank">Details</a></div>
+                <div id="order-details"><a href="details.php?time=<?=$cusresult['order_date']?>&proid=<?=$cusresult['pro_id']?>" target="_blank">Details</a></div>
             </li>    
     <?php  } 
      } 
@@ -170,14 +170,14 @@ $userid = $_SESSION['id'];
         $rdy_search = mysqli_query($conn,$search_qry);
         while ($cusresult = mysqli_fetch_array($rdy_search)) {?>
              <li id="order-list">
-                <div id="order-time"><?=$cusresult['order_time']?></div>
+                <div id="order-time"><?=$cusresult['order_date']?></div>
                 <div id="order-name"><?=$cusresult['first_name']?> <?=$cusresult['last_name']?></div>
                 <div id="order-img"><img src="<?=$cusresult['pro_img']?>" alt=""></div>
                 <div id="order-pro"><?=$cusresult['pro_name']?></div>
                 <div id="order-quan"><?=$cusresult['pro_quan']?></div>
                 <div id="order-price">RM<span><?=$cusresult['pro_price']?></span></div>
                 <div id="order-status"><?=$cusresult['status']?></div>
-                <div id="order-details"><a href="details.php?time=<?=$cusresult['order_time']?>&proid=<?=$cusresult['pro_id']?>" target="_blank">Details</a></div>
+                <div id="order-details"><a href="details.php?time=<?=$cusresult['order_date']?>&proid=<?=$cusresult['pro_id']?>" target="_blank">Details</a></div>
             </li>  
     <?php  }
     }
