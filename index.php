@@ -24,7 +24,10 @@
 </head>
 <body>
     <div id="main">
-    <?php if (isset($_SESSION['id'])) {
+    <?php
+    $qry = "SELECT * FROM product";
+    $sql = mysqli_query($conn, $qry);
+     if (isset($_SESSION['id'])) {
         if($_SESSION['identity'] === "seller") {
             $seller_qry = "SELECT * FROM product WHERE seller_id = '{$_SESSION['id']}'";
             $seller_sql = mysqli_query($conn, $seller_qry);
@@ -57,8 +60,6 @@
     </table>
 
     <?php }else{
-        $qry = "SELECT * FROM product";
-        $sql = mysqli_query($conn, $qry);
         while($row = mysqli_fetch_array($sql)){
         $getcart = "SELECT pro_quan FROM customer_cart WHERE customer_id='{$_SESSION['id']}' AND pro_id='{$row['ID']}'";
         $cartresult = mysqli_query($conn, $getcart);
@@ -81,8 +82,7 @@
             <p id="itembox-name"><?=$row['name']?></p>
             <h4 id='itemmbox-price-tag'>RM <?=$row['price']?></h4>
             </div>
-
-        <?php }}} }else{?>
+        <?php }}} }else{ ?>
             <?php while($row = mysqli_fetch_array($sql)){?>
                 <div id="itembox" onclick="window.location.href='viewpro.php?id=<?=$row['ID']?>'">
                 <div id="itembox-hover"><h4>View product</h4></div>
