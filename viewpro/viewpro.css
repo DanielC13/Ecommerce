@@ -1,0 +1,123 @@
+body{
+    height: 550px;
+    overflow: hidden;
+}
+
+
+#pro-image{
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin: 50px 50px;
+    border-radius: 5px;
+    border: 1px solid white;
+    float: left;
+}
+
+#pro-name{
+    position: relative;
+    display: block;
+    width: auto;
+}
+
+#pro-con{
+    position: relative;
+    width: 65%;
+    margin: 30px 30px 0 0 ;
+    height: 500px;
+    /* background-color: white; */
+    float: right;
+}
+
+#bott-right{
+    margin: 0 30px;
+    height: 60px;
+    width: 500px;
+    position: absolute;
+    right: -15px;
+    bottom: 70px;
+}
+
+#pro-price{
+    position: relative;
+    float: right;
+    width: auto;
+    height: 40px;
+}
+#pro-butt{
+    position: absolute;
+    border: 1px solid black;
+    cursor: pointer;
+    right: -490px;
+    color: black;
+    background-color: transparent;
+}
+#pro-butt:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#add-quan{
+    color: #282828;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size:20px;
+}
+
+#pro-quantity-con{
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    bottom: 0;
+}
+
+#total-price{
+    position: absolute;
+    border: none;
+    font-size: 30px;
+    width: 300px;
+    right: -330px;
+    text-align: right;
+    background-color: transparent;
+}
+
+.operator{
+    margin: 5px;
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: none;
+    font-size: 25px;
+    color:  #282828;
+    background-color: white;
+    border-radius: 3px;
+    text-align: center;
+    transition: 0.2s;
+    float: left;
+}
+
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+.operator:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1240px){
+    /* #pro-con{
+        width: 100%;
+        float: none;
+    } */
+}

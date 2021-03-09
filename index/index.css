@@ -1,0 +1,89 @@
+table td{
+    border:1px solid black;
+}
+
+
+td{
+    padding: 0 5px;
+    text-align: center;
+}
+
+.td-image{
+    width: 100px;
+}
+
+
+.butt-edit{
+    background-color: #EBEBEB;
+}
+
+#main{
+    list-style: none;
+    -webkit-box-orient: horizontal;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#itembox-pic{
+    height:100px; 
+    width:100px;
+    margin: 20px;
+    border: 1px solid #F9F9F9;
+}
+
+#itembox{
+    position: relative;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+    width: 200px;
+    height: 290px;
+    /* padding: 20px; */
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+#itembox-2{
+    position: relative;
+    /* border: 1px solid rgba(0, 0, 0, 0.6); */
+    background-color: whitesmoke;
+    text-align: center;
+    width: 200px;
+    height: 290px;
+    /* padding: 20px; */
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#itembox-hover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+     transition: 0.4s;
+     background-color: rgba(0, 0, 0, 0.5);
+}
+
+#itembox-hover h4{
+    color: white;
+    font-weight: normal;
+    padding: 120px 0;
+}
+
+#itembox:hover #itembox-hover{
+     opacity: 1;
+}
+
+#itembox-2:hover #itembox-hover{
+     opacity: 1;
+}
+
+#itembox-name{
+    font-size: 15px;
+    height: 110px;
+}
+
+#itembox-price-tag{
+    position: relative;
+}

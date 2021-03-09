@@ -1,0 +1,33 @@
+.left-con{
+    height: 100%;
+    width:30%;
+    float: left;
+    background-image: linear-gradient(to left,#E3E3E3,#C6C6C6);
+}
+
+.left-con-list{
+    list-style: none;
+    font-size: 20px;
+    margin: 20px;
+    margin-top: 30px;
+}
+.left-con-list img{
+    height: 100px;
+    width: 100px;
+}
+.left-con-list li{
+    margin: 10px;
+}
+
+.img-con{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.right-con{
+    height: 100%;
+    width: 70%;
+    float: right;
+}

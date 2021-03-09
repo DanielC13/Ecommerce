@@ -1,0 +1,35 @@
+body{
+    /* height: 1000px; */
+}
+form{
+    position: relative;
+    border:1px solid black;
+    border-radius: 10px;
+    height: auto;
+    width: 220px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+}
+
+input[type="submit"]{
+    margin-bottom: 15px;
+}
+
+input[type="text"],input[type="password"]{
+    padding:3px;
+}
+
+input{
+    margin: 5px;
+}
+
+a{
+    position: relative;
+    bottom: 5px;
+}
+
+h1{
+    margin: 20px 0;
+}

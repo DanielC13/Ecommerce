@@ -1,0 +1,116 @@
+body{
+    overflow: hidden;
+    height: 100%;
+}
+
+.cart{
+    color: blACK;
+    top: 50px;
+}
+
+.nav-cart{
+    display: none;
+}
+
+.main-con{
+    width:100%;
+    display:flex;
+    height: 90%;
+}
+
+.con-left{
+    width: 50%;
+    padding: 60px 80px;
+    box-sizing: border-box;
+}
+
+.con-left p{
+    font-size: 20px;
+}
+
+.con-left input{
+    border: none;
+    border-bottom: 1.5px solid #999;
+    font-size: 15px;
+    padding: 10px 0;
+    margin: 5px 10px 0 0;
+    background-color: transparent;
+}
+
+.con-left input[name="detail-address"]{
+    width: 400px;
+    margin-top: 20px;
+}
+
+.con-left input[name="phone-number"]{
+    width: 200px;
+}
+
+.con-left span{
+    font-size: 15px;
+} 
+
+.con-left-contact{
+    margin: 10px 0 50px 0;
+}
+
+.con-left-address{
+    margin: 10px 0 20px 0;
+}
+
+.con-right{
+    box-sizing: border-box;
+    width: 50%;
+    background-color: white;
+    padding-left: 50px;
+}
+
+.cart-list-checkout{
+    height: 300px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+#sub-place-order{
+    display: none;
+}
+
+#btn-place-order{
+    cursor: pointer;
+    position: relative;
+    color: white;
+    border: 1px solid white;
+    font-size: 18px;
+    padding: 15px 5px;
+    background-color: #282828;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .4s;
+}
+#btn-place-order:hover{
+    background-color: #4c4c4c;
+}
+
+.cart-subtotal{
+    border-bottom: 2px solid black;
+}
+
+.each-all:hover{
+    color: black;
+}
+.each-all:hover .each-cartimg{
+    border: 2px solid black;
+}
+
+
+
+.cart-list::-webkit-scrollbar{
+    background-color: white;
+}
+
+.cart-list::-webkit-scrollbar-thumb{
+    background-color: #999;
+}

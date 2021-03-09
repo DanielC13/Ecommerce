@@ -1,0 +1,50 @@
+#addpro-form{
+    position: relative;
+    border:1px solid black;
+    border-radius: 10px;
+    height: auto;
+    width: 230px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+input[type="text"],input[type="number"]{
+    padding:3px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+#product-image-con{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#product-pic{
+    height: 100px;
+    width: 100px;
+}
+
+input{
+    margin: 5px;
+}
+
+a{
+    position: relative;
+    bottom: 5px;
+}
+
+hr{
+    margin: 10px;
+}

@@ -1,0 +1,151 @@
+body{
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.searchbox{
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    float: right;
+    margin: 10px;
+}
+
+#order-list-con{
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    width: auto;
+    height: 66vh;
+    list-style: none;
+    overflow-y: scroll;
+}
+
+.order-header{
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    width: auto;
+    height: 20px;
+    list-style: none;
+}
+
+#order-list-header{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    position: relative;
+    background-color: white;
+}
+#order-list-header #order-price{
+    text-align: center;
+}
+
+#order-list-header i{
+    display: none;
+    font-size: 15px;
+}
+
+.list-header{
+    height: 10px;
+}
+
+#order-list{
+    width: 100%;
+    height: 120px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+}
+#order-list *{
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+
+}
+
+#order-time{
+    width: 15%;
+    height: auto;
+    cursor: pointer;
+}
+#order-time:hover i{
+    display: inline-block;
+}
+
+#order-name{
+    width: 15%;
+    height: auto;
+    cursor: pointer;
+}
+#order-name:hover i{
+    display: inline-block;
+}
+
+#order-img{
+    width: 15%;
+    height: 150px;
+}
+#order-img img{
+    width: 100px;
+    height: 100px;
+}
+
+#order-pro{
+    width: 16%;
+    height: auto;
+    cursor: pointer;
+}
+#order-pro:hover i{
+    display: inline-block;
+}
+
+#order-quan{
+    width: 9%;
+    height: auto;
+    cursor: pointer;
+}
+#order-quan:hover i{
+    display: inline-block;
+}
+
+#order-price{
+    width: 10%;
+    height: auto;
+    text-align: left;
+    cursor: pointer;
+}
+#order-price:hover i{
+    display: inline-block;
+}
+#order-price span{
+    float: right;
+}
+
+#order-status{
+    width: 10%;
+    height: auto;
+}
+
+#order-details{
+    width: 10%;
+    height: auto;
+}
+
+#order-details a{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    transition: 0.4s;
+}
+#order-details a:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}

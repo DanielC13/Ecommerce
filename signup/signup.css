@@ -1,0 +1,42 @@
+form{
+    position: relative;
+    border:1px solid black;
+    padding: 10px 0 10px 0;
+    border-radius: 10px;
+    height: auto;
+    width: 250px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+}
+
+#profile-pic{
+    height: 100px;
+    width:100px;
+}
+
+#profile-image-con{
+    margin: 20px auto;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+input[type="text"],input[type="password"],input[type="email"]{
+    padding:3px;
+}
+
+input{
+    margin: 5px;
+}
+
+a{
+    position: relative;
+    bottom: -5px;
+}
